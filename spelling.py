@@ -1,8 +1,3 @@
-#find e in a string (not the first letter though)
-#check if next letter is i
-# check if previous letter is c
-#if i comes next and c does not come before e, print Remember, i before e except after c
-
 def i_b4_e(word):
     word = word.lower()
     with open('i_e_exceptions.txt', 'r') as file:
