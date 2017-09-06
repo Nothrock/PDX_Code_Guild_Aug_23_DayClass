@@ -21,4 +21,5 @@ r = requests.post('http://api.openweathermap.org/data/2.5/weather', params=packa
 
 data = r.json()
 
-print('The weather in {} is {} and the temperature is {} {}.'.format(data['name'], data['weather'][0]['description'], convert_temp(data['main']['temp'], temper), temper))
+print('The weather in {} is {}.'.format(data['name'], data['weather'][0]['description']))
+print('The temperature is {} {}.'.format(convert_temp(data['main']['temp'], temper), temper))
