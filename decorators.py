@@ -1,6 +1,6 @@
 import time
 
-#Outputs the time a function takes to execute.
+#determines the time a function takes to execute.
 def timing_function(thing_being_timed):
 
 
