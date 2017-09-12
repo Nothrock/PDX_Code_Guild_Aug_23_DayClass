@@ -1,7 +1,5 @@
-
-
 first_name = input("Hello. What's your name? Type your first name and press enter.")
-print ("Hi {}! Let's play a game".format(first_name))
+print ("Hi {}! Let's play a game.".format(first_name))
 adjective1 = input("Type an adjective, and press enter.")
 noun1 = input("Type a noun(plural), and press enter.")
 noun2 = input("Type another noun(plural), and press enter.")

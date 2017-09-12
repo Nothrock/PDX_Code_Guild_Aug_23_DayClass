@@ -11,9 +11,10 @@
 import random
 
 class Card:
-    def __init__(self, suit, rank):
+    def __init__(self, suit, rank, value):
         self.suit = suit
         self.rank = rank
+        self.value = value
 
     def __str__(self):
         return str(self.rank) + ' of ' + str(self.suit)
@@ -27,16 +28,53 @@ class Card:
 
 class Deck:
     def __init__(self):
-        suits = [Spades, Hearts, Clubs, Diamonds]
-        ranks = [A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, K, Q]
-
+        self.suits = ['Spades', 'Hearts', 'Clubs', 'Diamonds']
+        self.ranks = [('2', 2), ('3', 3), ('4', 4), ('5', 5), ('6', 6), ('7', 7), ('8', 8), ('9', 9), ('10', 10), ('J', 10),
+                 ('Q', 10), ('K', 10), ('A', 11)]
+        self.cards = []
+        for r in self.ranks:
+            for s in self.suits:
+                c = Card(suit = s, rank = r[0], value = r[1])
+                # c.rank = r[0]
+                # c.value = r[1]
+                # c.suit = s
+                self.cards.append(c)
 
     def shuffle(self):
         random.shuffle(self.cards)
 
+    def cut_deck(self):
+        self.cut_1 = []
+        self.cut_2 = []
+        self.cut_1 = self.cards[0:len(self.cards)//2]
+        self.cut_2  = self.cards[len(self.cards)//2:]
+        # self.cut_2.append(self.cut_1)
+        self.cards = self.cut_2 + self.cut_1
+        # testing the cut_deck
+        print('Length:', len(self.cards), len(self.cut_1), len(self.cut_2))
 
-# class Hand:
-#     def __init__(self, card):
+    def show(self):
+        for i in self.cards:
+            print(i)
 
-card = Card('Spades', '2')
-print(card)
+
+
+class Hand:
+    def __init__(self):
+        pass
+
+
+
+
+
+deck = Deck()
+for i in deck.cards:
+    print(i)
+# deck.shuffle()
+# for i in deck.cards:
+#     print(i)
+deck.show()
+print('cutting the deck')
+deck.cut_deck()
+print("Length: ", len(deck.cards))
+deck.show()
