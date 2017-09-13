@@ -47,7 +47,7 @@ class Deck:
         self.cut_1 = []
         self.cut_2 = []
         self.cut_1 = self.cards[0:len(self.cards)//2]
-        self.cut_2  = self.cards[len(self.cards)//2:]
+        self.cut_2 = self.cards[len(self.cards)//2:]
         # self.cut_2.append(self.cut_1)
         self.cards = self.cut_2 + self.cut_1
         # testing the cut_deck
